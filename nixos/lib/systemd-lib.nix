@@ -635,11 +635,11 @@ rec {
           // optionalAttrs (config.onSuccess != [ ]) {
             OnSuccess = toString config.onSuccess;
           }
-          // optionalAttrs (options.startLimitIntervalSec.isDefined) {
-            StartLimitIntervalSec = toString config.startLimitIntervalSec;
+          // optionalAttrs (options.startLimitIntervalSec != null) {
+            StartLimitIntervalSec = lib.mkOptionDefault (toString config.startLimitIntervalSec);
           }
-          // optionalAttrs (options.startLimitBurst.isDefined) {
-            StartLimitBurst = toString config.startLimitBurst;
+          // optionalAttrs (options.startLimitBurst != null) {
+            StartLimitBurst = lib.mkOptionDefault (toString config.startLimitBurst);
           };
       };
     };
