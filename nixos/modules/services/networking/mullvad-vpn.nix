@@ -91,8 +91,8 @@ with lib;
       ++ lib.optional cfg.enableEarlyBootBlocking "mullvad-early-boot-blocking.service";
       # See https://github.com/NixOS/nixpkgs/issues/262681
       path = lib.optional config.networking.resolvconf.enable config.networking.resolvconf.package;
-      startLimitBurst = 5;
-      startLimitIntervalSec = 20;
+      startLimitBurst = lib.mkDefault 5;
+      startLimitIntervalSec = lib.mkDefault 20;
       serviceConfig = {
         ExecStart = "${cfg.package}/bin/mullvad-daemon -v --disable-stdout-timestamps";
         Restart = "always";

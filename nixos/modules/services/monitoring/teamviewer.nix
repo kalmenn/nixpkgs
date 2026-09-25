@@ -34,8 +34,8 @@ in
       requires = [ "dbus.service" ];
       preStart = "mkdir -pv /var/lib/teamviewer /var/log/teamviewer";
 
-      startLimitIntervalSec = 60;
-      startLimitBurst = 10;
+      startLimitIntervalSec = lib.mkDefault 60;
+      startLimitBurst = lib.mkDefault 10;
       serviceConfig = {
         Type = "simple";
         ExecStart = "${cfg.package}/bin/teamviewerd -f";

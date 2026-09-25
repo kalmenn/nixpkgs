@@ -50,7 +50,7 @@ in
         description = "A HTTP nix store that proxies requests to Google Storage";
         wantedBy = [ "multi-user.target" ];
 
-        startLimitIntervalSec = 10;
+        startLimitIntervalSec = lib.mkDefault 10;
         serviceConfig = {
           RestartSec = 5;
           ExecStart = ''

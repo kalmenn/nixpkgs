@@ -171,7 +171,7 @@ in
       description = "VictoriaMetrics time series database";
       wantedBy = [ "multi-user.target" ];
       after = [ "network.target" ];
-      startLimitBurst = 5;
+      startLimitBurst = lib.mkDefault 5;
 
       serviceConfig = {
         ExecStart = lib.escapeShellArgs (

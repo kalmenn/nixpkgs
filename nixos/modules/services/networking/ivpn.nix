@@ -47,8 +47,8 @@ in
         # Needed for mount
         "/run/wrappers"
       ];
-      startLimitBurst = 5;
-      startLimitIntervalSec = 20;
+      startLimitBurst = lib.mkDefault 5;
+      startLimitIntervalSec = lib.mkDefault 20;
       serviceConfig = {
         ExecStart = "${pkgs.ivpn-service}/bin/ivpn-service --logging";
         Restart = "always";

@@ -152,8 +152,8 @@ in
           ''${lib.getExe package} -c "''${CONFIGURATION_DIRECTORY}"/config.yaml -db "''${STATE_DIRECTORY}"/sqlite.db'';
       };
       enableStrictShellChecks = true;
-      startLimitIntervalSec = 10;
-      startLimitBurst = 3;
+      startLimitIntervalSec = lib.mkDefault 10;
+      startLimitBurst = lib.mkDefault 3;
       preStart = ''
         cp "${configFile}" "''${RUNTIME_DIRECTORY}"/new
         ${lib.getExe pkgs.jq} \

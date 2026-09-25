@@ -475,7 +475,7 @@ in
         description = "Warpgate smart bastion";
         wantedBy = [ "multi-user.target" ];
         after = [ "network.target" ];
-        startLimitBurst = 5;
+        startLimitBurst = lib.mkDefault 5;
         serviceConfig = {
           LoadCredential = "${
             if cfg.databaseUrlFile != null then "databaseUrl:${cfg.databaseUrlFile}" else ""

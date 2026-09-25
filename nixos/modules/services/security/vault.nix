@@ -231,8 +231,8 @@ in
 
       restartIfChanged = false; # do not restart on "nixos-rebuild switch". It would seal the storage and disrupt the clients.
 
-      startLimitIntervalSec = 60;
-      startLimitBurst = 3;
+      startLimitIntervalSec = lib.mkDefault 60;
+      startLimitBurst = lib.mkDefault 3;
       serviceConfig = {
         User = "vault";
         Group = "vault";

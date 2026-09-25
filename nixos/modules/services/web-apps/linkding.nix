@@ -358,8 +358,8 @@ in
         wantedBy = [ "multi-user.target" ];
         after = [ "linkding-setup.service" ];
         requires = [ "linkding-setup.service" ];
-        startLimitBurst = 5;
-        startLimitIntervalSec = 60;
+        startLimitBurst = lib.mkDefault 5;
+        startLimitIntervalSec = lib.mkDefault 60;
         serviceConfig = commonServiceConfig // {
           Type = "exec";
           ExecStart = "${lib.getExe pkgs.uwsgi} --ini ${uwsgiIni}";

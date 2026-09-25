@@ -991,8 +991,8 @@ in
       after = [ "network.target" ];
       wantedBy = [ "multi-user.target" ];
 
-      startLimitBurst = 4;
-      startLimitIntervalSec = 5 * 60; # 5 mins
+      startLimitBurst = lib.mkDefault 4;
+      startLimitIntervalSec = lib.mkDefault 5 * 60; # 5 mins
       serviceConfig = {
         ExecStart = "${nsdPkg}/sbin/nsd -d -c ${nsdEnv}/nsd.conf";
         StandardError = "null";

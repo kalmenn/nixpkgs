@@ -188,8 +188,8 @@ in
           description = "Sharkey";
           documentation = [ "https://docs.joinsharkey.org/" ];
           wantedBy = [ "multi-user.target" ];
-          startLimitBurst = 5;
-          startLimitIntervalSec = 60;
+          startLimitBurst = lib.mkDefault 5;
+          startLimitIntervalSec = lib.mkDefault 60;
           environment.MISSKEY_CONFIG_DIR = "/etc/sharkey";
 
           serviceConfig = {

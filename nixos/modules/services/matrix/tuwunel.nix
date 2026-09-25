@@ -204,8 +204,8 @@ in
         { TUWUNEL_CONFIG = configFile; }
         cfg.extraEnvironment
       ];
-      startLimitBurst = 5;
-      startLimitIntervalSec = 60;
+      startLimitBurst = lib.mkDefault 5;
+      startLimitIntervalSec = lib.mkDefault 60;
       serviceConfig = {
         Type = "notify";
 

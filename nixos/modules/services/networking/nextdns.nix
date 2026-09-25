@@ -37,8 +37,8 @@ in
       environment = {
         SERVICE_RUN_MODE = "1";
       };
-      startLimitIntervalSec = 5;
-      startLimitBurst = 10;
+      startLimitIntervalSec = lib.mkDefault 5;
+      startLimitBurst = lib.mkDefault 10;
       serviceConfig = {
         ExecStart = "${pkgs.nextdns}/bin/nextdns run ${escapeShellArgs config.services.nextdns.arguments}";
         RestartSec = 120;

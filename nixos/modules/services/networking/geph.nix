@@ -35,8 +35,8 @@ in
       wantedBy = [ "multi-user.target" ];
       wants = [ "network-online.target" ];
       after = [ "network-online.target" ];
-      startLimitBurst = 5;
-      startLimitIntervalSec = 20;
+      startLimitBurst = lib.mkDefault 5;
+      startLimitIntervalSec = lib.mkDefault 20;
       serviceConfig = {
         DynamicUser = true;
         LoadCredential = "geph-config:${cfg.configFile}";

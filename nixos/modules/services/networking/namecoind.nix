@@ -170,8 +170,8 @@ in
       after = [ "network.target" ];
       wantedBy = [ "multi-user.target" ];
 
-      startLimitIntervalSec = 120;
-      startLimitBurst = 5;
+      startLimitIntervalSec = lib.mkDefault 120;
+      startLimitBurst = lib.mkDefault 5;
       serviceConfig = {
         User = "namecoin";
         Group = "namecoin";

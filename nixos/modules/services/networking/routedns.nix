@@ -62,8 +62,8 @@ in
       after = [ "network.target" ]; # in case a bootstrap resolver is used, this might fail a few times until the respective server is actually reachable
       wantedBy = [ "multi-user.target" ];
       wants = [ "network.target" ];
-      startLimitIntervalSec = 30;
-      startLimitBurst = 5;
+      startLimitIntervalSec = lib.mkDefault 30;
+      startLimitBurst = lib.mkDefault 5;
       serviceConfig = {
         Restart = "on-failure";
         RestartSec = "5s";

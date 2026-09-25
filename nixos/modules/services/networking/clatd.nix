@@ -50,7 +50,7 @@ in
       wantedBy = [ "multi-user.target" ];
       after = [ "network-online.target" ];
       wants = [ "network-online.target" ];
-      startLimitIntervalSec = 0;
+      startLimitIntervalSec = lib.mkDefault 0;
 
       serviceConfig = {
         ExecStart = "${cfg.package}/bin/clatd -c ${configFile}";

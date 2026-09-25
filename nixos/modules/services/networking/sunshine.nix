@@ -174,8 +174,8 @@ in
       wants = [ "graphical-session.target" ];
       after = [ "graphical-session.target" ];
 
-      startLimitIntervalSec = 500;
-      startLimitBurst = 5;
+      startLimitIntervalSec = lib.mkDefault 500;
+      startLimitBurst = lib.mkDefault 5;
 
       environment.PATH = lib.mkForce null; # don't use default PATH, needed for tray icon menu links to work
 

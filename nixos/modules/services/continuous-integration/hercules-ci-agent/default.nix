@@ -34,7 +34,7 @@ in
       after = [ "network-online.target" ];
       wants = [ "network-online.target" ];
       path = [ config.nix.package ];
-      startLimitBurst = 30 * 1000000; # practically infinite
+      startLimitBurst = lib.mkDefault 30 * 1000000; # practically infinite
       serviceConfig = {
         User = "hercules-ci-agent";
         ExecStart = command;

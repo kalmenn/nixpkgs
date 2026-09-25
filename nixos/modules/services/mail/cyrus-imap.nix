@@ -333,7 +333,7 @@ in
         "/etc/cyrus.conf"
       ];
 
-      startLimitIntervalSec = 60;
+      startLimitIntervalSec = lib.mkDefault 60;
       environment = {
         CYRUS_VERBOSE = mkIf cfg.debug "1";
         LISTENQUEUE = toString cfg.listenQueue;

@@ -174,7 +174,7 @@ in
     systemd.services.dnsdist = {
       wantedBy = [ "multi-user.target" ];
 
-      startLimitIntervalSec = 0;
+      startLimitIntervalSec = lib.mkDefault 0;
       serviceConfig = {
         User = "dnsdist";
         Group = "dnsdist";

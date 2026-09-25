@@ -296,7 +296,7 @@ in
           ''
       );
 
-      startLimitIntervalSec = 0;
+      startLimitIntervalSec = lib.mkDefault 0;
       serviceConfig = {
         Type = "forking";
         Restart = "always";

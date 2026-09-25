@@ -198,8 +198,8 @@ in
       after = [ "network-online.target" ];
       wants = [ "network-online.target" ];
       wantedBy = [ "multi-user.target" ];
-      startLimitBurst = 3;
-      startLimitIntervalSec = 180;
+      startLimitBurst = lib.mkDefault 3;
+      startLimitIntervalSec = lib.mkDefault 180;
 
       environment =
         (mapAttrs (

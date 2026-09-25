@@ -47,7 +47,7 @@ let
 
       # Don't start services that are not yet initialized
       unitConfig.ConditionPathExists = "/var/lib/${stateDirectory}/keyring";
-      startLimitBurst =
+      startLimitBurst = lib.mkDefault (
         if daemonType == "osd" then
           30
         else if
@@ -58,8 +58,9 @@ let
         then
           3
         else
-          5;
-      startLimitIntervalSec = 60 * 30; # 30 mins
+          5
+      );
+      startLimitIntervalSec = lib.mkDefault 60 * 30; # 30 mins
 
       serviceConfig = {
         LimitNOFILE = 1048576;

@@ -73,8 +73,8 @@ in
       # SCX service should be started only if the kernel supports sched-ext
       unitConfig.ConditionPathIsDirectory = "/sys/kernel/sched_ext";
 
-      startLimitIntervalSec = 30;
-      startLimitBurst = 2;
+      startLimitIntervalSec = lib.mkDefault 30;
+      startLimitBurst = lib.mkDefault 2;
 
       serviceConfig = {
         Type = "simple";

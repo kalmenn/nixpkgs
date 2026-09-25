@@ -126,8 +126,8 @@ in
       wants = [ "network-online.target" ];
       after = [ "network-online.target" ];
       wantedBy = [ "multi-user.target" ];
-      startLimitIntervalSec = 86400;
-      startLimitBurst = 5;
+      startLimitIntervalSec = lib.mkDefault 86400;
+      startLimitBurst = lib.mkDefault 5;
       serviceConfig = {
         EnvironmentFile = cfg.environmentFiles;
         ExecStartPre = lib.optional (cfg.environmentFiles != [ ]) (

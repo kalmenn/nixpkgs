@@ -1501,7 +1501,7 @@ in
           ${execCommand} -t
         '';
 
-        startLimitIntervalSec = 60;
+        startLimitIntervalSec = lib.mkDefault 60;
         serviceConfig = {
           ExecStart = execCommand;
           ExecReload = [

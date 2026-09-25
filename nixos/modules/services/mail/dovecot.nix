@@ -1043,7 +1043,7 @@ in
       wantedBy = [ "multi-user.target" ];
       restartTriggers = [ cfg.configFile ];
 
-      startLimitIntervalSec = 60; # 1 min
+      startLimitIntervalSec = lib.mkDefault 60; # 1 min
       serviceConfig = {
         Type = "notify";
         ExecStart = "${lib.getExe cfg.package} -F";

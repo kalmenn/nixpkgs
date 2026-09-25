@@ -274,8 +274,8 @@ in
       };
       environment.HOME = "/var/lib/nezha-agent";
       enableStrictShellChecks = true;
-      startLimitIntervalSec = 10;
-      startLimitBurst = 3;
+      startLimitIntervalSec = lib.mkDefault 10;
+      startLimitBurst = lib.mkDefault 3;
       script = ''
         cp "${configFile}" "''${RUNTIME_DIRECTORY}"/config.json
         ${lib.optionalString (cfg.clientSecretFile != null) ''

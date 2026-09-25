@@ -457,8 +457,8 @@ in
       after = map (certName: "acme-${certName}.service") vhostCertNames;
 
       wantedBy = [ "multi-user.target" ];
-      startLimitIntervalSec = 14400;
-      startLimitBurst = 10;
+      startLimitIntervalSec = lib.mkDefault 14400;
+      startLimitBurst = lib.mkDefault 10;
       reloadTriggers = optional cfg.enableReload cfg.configFile;
       restartTriggers = optional (!cfg.enableReload) cfg.configFile;
 

@@ -73,8 +73,8 @@ in
 
       # Stop restarting if the display manager stops (crashes) 2 times
       # in one minute. Starting X typically takes 3-4s.
-      startLimitIntervalSec = 30;
-      startLimitBurst = 3;
+      startLimitIntervalSec = lib.mkDefault 30;
+      startLimitBurst = lib.mkDefault 3;
       serviceConfig = {
         Restart = "always";
         RestartSec = "200ms";

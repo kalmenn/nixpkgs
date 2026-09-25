@@ -203,7 +203,7 @@ in
       ];
       wantedBy = [ "multi-user.target" ];
 
-      startLimitIntervalSec = 0;
+      startLimitIntervalSec = lib.mkDefault 0;
       serviceConfig = {
         ExecStart = toString (
           [

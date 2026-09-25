@@ -287,7 +287,7 @@ in
         ];
         before = [ "network.target" ];
         wantedBy = [ "multi-user.target" ];
-        startLimitIntervalSec = 180;
+        startLimitIntervalSec = lib.mkDefault 180;
         reloadIfChanged = true;
         restartTriggers = [
           configFile

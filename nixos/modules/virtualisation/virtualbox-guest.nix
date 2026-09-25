@@ -17,7 +17,7 @@ let
 
     # The graphical session may not be ready when starting the service
     # Hence, check if the DISPLAY env var is set, otherwise fail, wait and retry again
-    startLimitBurst = 20;
+    startLimitBurst = lib.mkDefault 20;
 
     unitConfig.ConditionVirtualization = "oracle";
 

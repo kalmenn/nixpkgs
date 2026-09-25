@@ -36,8 +36,8 @@ in
       wantedBy = [ "graphical-session.target" ];
       partOf = [ "graphical-session.target" ];
 
-      startLimitIntervalSec = 350;
-      startLimitBurst = 10;
+      startLimitIntervalSec = lib.mkDefault 350;
+      startLimitBurst = lib.mkDefault 10;
       serviceConfig = {
         ExecStart = ''
           ${pkgs.safeeyes}/bin/safeeyes

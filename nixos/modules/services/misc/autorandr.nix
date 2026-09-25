@@ -386,8 +386,8 @@ in
       description = "Autorandr execution hook";
       after = [ "sleep.target" ];
 
-      startLimitIntervalSec = 5;
-      startLimitBurst = 1;
+      startLimitIntervalSec = lib.mkDefault 5;
+      startLimitBurst = lib.mkDefault 1;
       serviceConfig = {
         ExecStart = ''
           ${pkgs.autorandr}/bin/autorandr \

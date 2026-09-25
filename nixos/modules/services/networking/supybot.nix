@@ -109,8 +109,8 @@ in
         rm -f '${cfg.stateDir}/supybot.cfg.bak'
       '';
 
-      startLimitIntervalSec = 5 * 60; # 5 min
-      startLimitBurst = 1;
+      startLimitIntervalSec = lib.mkDefault 5 * 60; # 5 min
+      startLimitBurst = lib.mkDefault 1;
       serviceConfig = {
         ExecStart = "${pyEnv}/bin/supybot ${cfg.stateDir}/supybot.cfg";
         PIDFile = "/run/supybot.pid";

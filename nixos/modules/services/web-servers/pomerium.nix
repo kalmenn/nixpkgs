@@ -82,7 +82,7 @@ in
           CERTIFICATE_FILE = "fullchain.pem";
           CERTIFICATE_KEY_FILE = "key.pem";
         };
-        startLimitIntervalSec = 60;
+        startLimitIntervalSec = lib.mkDefault 60;
         script = ''
           if [[ -v CREDENTIALS_DIRECTORY ]]; then
             cd "$CREDENTIALS_DIRECTORY"
