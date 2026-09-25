@@ -384,7 +384,7 @@ let
         path = [ pkgs.minica ];
 
         unitConfig = {
-          StartLimitIntervalSec = 0;
+          StartLimitIntervalSec = lib.mkDefault 0;
         };
 
         serviceConfig = commonServiceConfig // {

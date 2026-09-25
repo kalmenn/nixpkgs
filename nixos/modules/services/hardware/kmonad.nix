@@ -138,8 +138,8 @@ let
         # Control rate limiting.
         # Stop the restart logic if we restart more than
         # StartLimitBurst times in a period of StartLimitIntervalSec.
-        StartLimitIntervalSec = 2;
-        StartLimitBurst = 5;
+        StartLimitIntervalSec = lib.mkDefault 2;
+        StartLimitBurst = lib.mkDefault 5;
       };
       serviceConfig = {
         ExecStart = ''

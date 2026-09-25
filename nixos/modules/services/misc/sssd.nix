@@ -177,8 +177,8 @@ in
           EnvironmentFile = lib.mkIf (cfg.environmentFile != null) cfg.environmentFile;
         };
         unitConfig = {
-          StartLimitIntervalSec = "50s";
-          StartLimitBurst = 5;
+          StartLimitIntervalSec = lib.mkDefault "50s";
+          StartLimitBurst = lib.mkDefault 5;
         };
         preStart = ''
           mkdir -p "${dataDir}/conf.d"

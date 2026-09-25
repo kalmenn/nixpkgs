@@ -76,7 +76,7 @@ in
       '';
 
       # Unit start limit workaround
-      systemd.services.angrr.unitConfig.StartLimitBurst = 10;
+      systemd.services.angrr.unitConfig.StartLimitBurst = lib.mkDefault 10;
     };
   };
 

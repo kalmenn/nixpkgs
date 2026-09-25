@@ -181,8 +181,8 @@ in
       ];
 
       unitConfig = {
-        StartLimitIntervalSec = 10;
-        StartLimitBurst = 3;
+        StartLimitIntervalSec = lib.mkDefault 10;
+        StartLimitBurst = lib.mkDefault 3;
       };
     };
 

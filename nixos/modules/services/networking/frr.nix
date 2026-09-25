@@ -308,7 +308,7 @@ in
           ExecReload = "${pkgs.frr}/libexec/frr/frrinit.sh reload";
         };
         unitConfig = {
-          StartLimitBurst = "3";
+          StartLimitBurst = lib.mkDefault "3";
         };
       };
     };

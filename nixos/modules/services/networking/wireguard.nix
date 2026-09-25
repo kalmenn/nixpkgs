@@ -496,7 +496,7 @@ let
                 dynamicEndpointRefreshSeconds;
           };
       unitConfig = lib.optionalAttrs dynamicRefreshEnabled {
-        StartLimitIntervalSec = 0;
+        StartLimitIntervalSec = lib.mkDefault 0;
       };
 
       script =

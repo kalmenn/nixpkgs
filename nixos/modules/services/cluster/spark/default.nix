@@ -126,7 +126,7 @@ in
             Restart = "always";
           };
           unitConfig = {
-            StartLimitBurst = 10;
+            StartLimitBurst = lib.mkDefault 10;
           };
         };
         spark-worker = lib.mkIf cfg.worker.enable {
@@ -156,7 +156,7 @@ in
             Restart = "always";
           };
           unitConfig = {
-            StartLimitBurst = 10;
+            StartLimitBurst = lib.mkDefault 10;
           };
         };
       };

@@ -75,7 +75,7 @@ in
       wantedBy = [ "multi-user.target" ];
       unitConfig = {
         # allow to restart indefinitely
-        StartLimitIntervalSec = 0;
+        StartLimitIntervalSec = lib.mkDefault 0;
       };
       serviceConfig = {
         # don't put too much stress on the machine when restarting

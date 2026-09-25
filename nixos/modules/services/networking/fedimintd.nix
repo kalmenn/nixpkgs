@@ -341,7 +341,7 @@ in
               ];
             };
             unitConfig = {
-              StartLimitBurst = 5;
+              StartLimitBurst = lib.mkDefault 5;
             };
           }
         ))

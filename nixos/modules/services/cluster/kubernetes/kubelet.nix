@@ -380,7 +380,7 @@ in
           WorkingDirectory = top.dataDir;
         };
         unitConfig = {
-          StartLimitIntervalSec = 0;
+          StartLimitIntervalSec = lib.mkDefault 0;
         };
       };
 

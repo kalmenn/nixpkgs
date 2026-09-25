@@ -183,7 +183,7 @@ in
         EnvironmentFile = cfg.secretFile;
       };
       unitConfig = {
-        StartLimitBurst = 5;
+        StartLimitBurst = lib.mkDefault 5;
       };
     };
   };

@@ -155,8 +155,8 @@ in
           RestartSec = "5s";
         };
         unitConfig = {
-          StartLimitIntervalSec = 30;
-          StartLimitBurst = 5;
+          StartLimitIntervalSec = lib.mkDefault 30;
+          StartLimitBurst = lib.mkDefault 5;
         };
       };
     };

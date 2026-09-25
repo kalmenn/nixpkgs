@@ -96,7 +96,7 @@ import ./make-test-python.nix (
         };
 
         # We always want to restart so the tests never hang
-        systemd.services.patroni.serviceConfig.StartLimitIntervalSec = 0;
+        systemd.services.patroni.serviceConfig.StartLimitIntervalSec = lib.mkDefault 0;
       };
   in
   {

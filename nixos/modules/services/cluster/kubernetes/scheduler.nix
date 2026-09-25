@@ -92,7 +92,7 @@ in
         RestartSec = 5;
       };
       unitConfig = {
-        StartLimitIntervalSec = 0;
+        StartLimitIntervalSec = lib.mkDefault 0;
       };
     };
 

@@ -1612,7 +1612,7 @@ in
             # if a lot of certificates are renewed in quick succession. The reload itself is cheap,
             # so even doing a lot of them in a short burst is fine.
             # FIXME: there's probably a better way to do this.
-            StartLimitIntervalSec = 0;
+            StartLimitIntervalSec = lib.mkDefault 0;
           };
           serviceConfig = {
             Type = "oneshot";

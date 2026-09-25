@@ -197,7 +197,7 @@ in
         RestartSec = 10;
       };
       unitConfig = {
-        StartLimitBurst = 5;
+        StartLimitBurst = lib.mkDefault 5;
       };
     };
 

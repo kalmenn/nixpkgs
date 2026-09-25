@@ -493,7 +493,7 @@ in
             };
 
           # Allow it to restart if the wifi interface is not up
-          unitConfig.StartLimitIntervalSec = 5;
+          unitConfig.StartLimitIntervalSec = lib.mkDefault 5;
         };
       users.groups.${cfg.group} = { };
       users.users.${cfg.user} = {

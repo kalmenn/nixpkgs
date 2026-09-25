@@ -98,7 +98,7 @@ in
         KillMode = "mixed";
       };
       unitConfig = {
-        StartLimitBurst = 3;
+        StartLimitBurst = lib.mkDefault 3;
       };
     };
   };

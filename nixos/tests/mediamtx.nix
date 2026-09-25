@@ -36,7 +36,7 @@ in
         after = [ "rtmp-publish.service" ];
         bindsTo = [ "rtmp-publish.service" ];
         wantedBy = [ "multi-user.target" ];
-        unitConfig.StartLimitIntervalSec = 0;
+        unitConfig.StartLimitIntervalSec = lib.mkDefault 0;
         serviceConfig = {
           DynamicUser = true;
           Restart = "on-failure";

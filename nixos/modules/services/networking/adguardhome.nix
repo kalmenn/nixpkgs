@@ -172,8 +172,8 @@ in
       after = [ "network.target" ];
       wantedBy = [ "multi-user.target" ];
       unitConfig = {
-        StartLimitIntervalSec = 5;
-        StartLimitBurst = 10;
+        StartLimitIntervalSec = lib.mkDefault 5;
+        StartLimitBurst = lib.mkDefault 10;
       };
 
       preStart =

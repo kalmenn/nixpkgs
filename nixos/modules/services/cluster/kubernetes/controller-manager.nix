@@ -157,7 +157,7 @@ in
         Group = "kubernetes";
       };
       unitConfig = {
-        StartLimitIntervalSec = 0;
+        StartLimitIntervalSec = lib.mkDefault 0;
       };
       path = top.path;
     };

@@ -109,8 +109,8 @@ in
         RuntimeDirectoryPreserve = "yes";
       };
       unitConfig = {
-        StartLimitBurst = "16";
-        StartLimitIntervalSec = "120s";
+        StartLimitBurst = lib.mkDefault "16";
+        StartLimitIntervalSec = lib.mkDefault "120s";
       };
     };
   };

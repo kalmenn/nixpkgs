@@ -84,8 +84,8 @@ in
           SupplementaryGroups = lib.mkIf cfg.journaldAccess "systemd-journal";
         };
       unitConfig = {
-        StartLimitIntervalSec = 10;
-        StartLimitBurst = 5;
+        StartLimitIntervalSec = lib.mkDefault 10;
+        StartLimitBurst = lib.mkDefault 5;
       };
     };
   };

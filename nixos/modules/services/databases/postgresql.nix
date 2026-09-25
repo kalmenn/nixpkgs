@@ -863,8 +863,8 @@ in
 
           # The max. time needed to perform `maxTries` start attempts of systemd
           # plus a bit of buffer time (bufferSec) on top.
-          StartLimitIntervalSec = TimeoutSec * maxTries + bufferSec;
-          StartLimitBurst = maxTries;
+          StartLimitIntervalSec = lib.mkDefault TimeoutSec * maxTries + bufferSec;
+          StartLimitBurst = lib.mkDefault maxTries;
         };
     };
 

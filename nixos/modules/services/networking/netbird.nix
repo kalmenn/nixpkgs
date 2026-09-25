@@ -609,7 +609,7 @@ in
 
           unitConfig = {
             StartLimitInterval = 5;
-            StartLimitBurst = 10;
+            StartLimitBurst = lib.mkDefault 10;
           };
 
           stopIfChanged = false;

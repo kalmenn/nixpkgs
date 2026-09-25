@@ -509,7 +509,7 @@ in
           #
           # FIXME: like Nginx’s FIXME, there’s probably a better way to do
           # this.
-          StartLimitIntervalSec = 0;
+          StartLimitIntervalSec = lib.mkDefault 0;
         };
         serviceConfig = {
           Type = "oneshot";
