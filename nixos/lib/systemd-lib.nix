@@ -635,10 +635,10 @@ rec {
           // optionalAttrs (config.onSuccess != [ ]) {
             OnSuccess = toString config.onSuccess;
           }
-          // optionalAttrs (options.startLimitIntervalSec.isDefined) {
+          // optionalAttrs (options.startLimitIntervalSec != null) {
             StartLimitIntervalSec = toString config.startLimitIntervalSec;
           }
-          // optionalAttrs (options.startLimitBurst.isDefined) {
+          // optionalAttrs (options.startLimitBurst != null) {
             StartLimitBurst = toString config.startLimitBurst;
           };
       };

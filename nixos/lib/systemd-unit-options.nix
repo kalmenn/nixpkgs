@@ -286,7 +286,8 @@ rec {
       };
 
       startLimitBurst = mkOption {
-        type = types.int;
+        default = null;
+        type = types.nullOr types.int;
         description = ''
           Configure unit start rate limiting. Units which are started
           more than startLimitBurst times within an interval time
@@ -295,7 +296,8 @@ rec {
       };
 
       startLimitIntervalSec = mkOption {
-        type = types.int;
+        default = null;
+        type = types.nullOr types.int;
         description = ''
           Configure unit start rate limiting. Units which are started
           more than startLimitBurst times within an interval time
